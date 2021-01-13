@@ -8,69 +8,80 @@ body {
     margin: 0;
     
     background-color: hsl(257, 40%, 49%);
-    background-image: url(images/bg-desktop.svg);
+    background-image: url(images/bg-mobile.svg);
     background-repeat: no-repeat;
+    background-size: contain;
+    background-origin: center;
     
-    
-    
-
    color: white;
-    font-family: 'Open Sans', sans-serif;
+font-family: 'Open Sans', sans-serif;
 }
 .main {
     display: flex;
     flex-direction: column;
-    width: 90%;
+    width: 80%;
     height: 100%;
     margin: 0 auto;
+    
 
 }
 .header {
-    padding-top: 50px;
-    padding-bottom: 80px;
+    padding-top: 30px;
+    padding-bottom: 55px;
 }
 .logo{
-    width: 200px;
+    width: 120px;
 }
 
 .container {
     display: flex;
-    flex-direction: row;
-   
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
 }
 
 .mock-ups {
     margin: 0;
+    width: 100%;
+    
+    
 }  
 
+.mock-up-img {
+    width: 100%;
+
+}
+
 .text {
-    width: 40%;
-    margin-left: 50px;
+    width: 100%;
+    
     margin-top: 50px;
 }
 .heading {
-    width: 90%;
+    width: 100%;
     margin: 0;
-    margin-bottom: 40px;
+    margin-bottom: 30px;
 
     font-family: 'Poppins', sans-serif;
-    font-size: 38px;
+    font-size: 24px;
     
 }
 
 .content {
+    width: 100%;
+
     line-height: 1.5;
-    font-size: 18px;
+    font-size: 14px;
 }
 
 .register {
-    padding: 10px 60px;
+    padding: 8px 60px;
     border-radius: 50px;
     border: 1px solid hsl(257, 40%, 24%);
     box-shadow: 3px 3px 10px 1px hsl(257, 40%, 24%);
     margin-top: 5px;
 
-    font-size: 18px;
+    font-size: 12px;
     font-family: 'Poppins', sans-serif;
     color:hsl(257, 40%, 49%);
 }
@@ -83,17 +94,18 @@ body {
 .icons {
     display: flex;
     flex-direction: row;
-    justify-content: flex-end;
+    justify-content: center;
+    margin-top: 50px;
 }
 
 .fab {
     display: inline-block;
     border: 1px solid white;
     border-radius: 50%;
-    padding: 10px;
-    margin: 10px;
-
-    font-size: 20px;
+    margin: 5px;
+    padding: 5px;
+    
+    font-size: 14px;
 }
 
 .fab:hover, .fab:active {
@@ -102,7 +114,87 @@ body {
 }
 
 .fa-facebook-f {
-    padding: 10px 13px;
+    padding: 5px 8px;
+}
+
+@media (min-width: 1024px) {
+body {
+    background-image: url(images/bg-desktop.svg);
+    
+}
+.main {
+    width: 90%;
+    
+}
+.header {
+    padding-top: 50px;
+    padding-bottom: 80px;
+}
+.logo{
+    width: 200px;
+}
+
+.container {
+
+    flex-direction: row;
+}
+/* .mock-up-img {
+    width: 500px;
+
+} */
+.text {
+    width: 40%;
+    margin-left: 50px;
+
+}
+.heading {
+    width: 90%;
+    margin-bottom: 40px;
+
+    font-size: 30px;
+    
+    
+}
+
+.content {
+    font-size: 16px;
+}
+
+.register {
+    padding: 10px 60px;
+
+    font-size: 18px;
+}
+
+.register:hover, .register:active {
+    background-color: hsl(300, 69%, 71%);
+    color: white;
+}
+
+.icons {
+    justify-content: flex-end;
+}
+
+.fab {
+    padding: 10px;
+    margin: 10px;
+
+    font-size: 20px;
 }
 
 
+
+.fa-facebook-f {
+    padding: 10px 13px;
+}
+
+}
+ @media (min-width: 1440px) {
+     .heading {
+        font-size: 38px;
+     }
+
+     .content {
+        font-size: 18px;
+    }
+ }
