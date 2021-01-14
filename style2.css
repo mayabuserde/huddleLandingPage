@@ -1,0 +1,190 @@
+body * {
+    border: 1px solid black;
+}
+
+/* make variable for things that are reused */
+:root {
+    --clr-neutral-100: white;
+    
+    --clr-primary-400: hsl(257, 40%, 49%);
+    --clr-primary-900: hsl(257, 40%, 24%);
+    
+    --clr-accent-400:  hsl(300, 69%, 71%);
+    --clr-accent-700: hsl(300, 70%, 60%);
+
+    --ff-primary: 'Open Sans', sans-serif;
+    --ff-accent: 'Poppins', sans-serif;
+
+}
+
+/* clear margins and box sizing */
+html * {
+    box-sizing: border-box;
+}
+html {
+    font-size: 10px;
+    text-align:center;
+}
+
+h1,
+h2,
+body {
+    margin: 0;
+}
+
+/* global classes */
+
+body {
+    background-color: var(--clr-primary-400);
+
+    font-family: var(--ff-primary);
+    color: var(--clr-neutral-100);
+
+    background-image: url(/images/bg-mobile.svg);
+    background-repeat: no-repeat;
+    
+}
+
+h1, h2 {
+    font-family: var(--ff-accent);
+}
+
+header {
+    padding-top: 3em;
+    Padding-bottom: 4em;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+/* utility classes, for 1-2 things that are repeated often */
+
+
+/* general classes */
+.wrap {
+    width: 90%;
+    margin: auto;
+}
+
+
+.logo-container {
+    width: 16rem;
+    padding-left: 2rem;
+}
+.split {
+    display: flex;
+    flex-direction: column;
+    
+}
+
+/* all direct descendants in flexbox will be same size */
+.split > * {
+    flex-basis: 100%;
+}
+
+/* all direct descendants with a sibling to the left get a margin */
+
+.split img {
+    
+    padding-left: 2.3rem;
+    padding-top: 1.1rem;
+}
+
+.split h1 {
+    font-size: 2.5rem;
+    line-height: 3.4rem;
+    max-width: 30rem;
+    /* padding:  1.2rem; */
+}
+
+.split p {
+    font-size: 1.1rem;
+    line-height: 2rem;
+    max-width: 35rem;
+    
+}
+
+
+.text {
+    padding: 4rem 1.25rem ;
+}
+
+.icons {
+    padding: 1.2rem 2.2rem;
+    text-align: right;
+}
+
+.icons > * + * {
+    margin-left: 0.8rem;
+}
+
+.icon {
+    width: 2.5rem;
+    height: 2.5rem;
+
+    border-radius: 50%;
+    border: 1px solid var(--clr-neutral-100);
+    padding: .5rem;
+    /* assign manually to place icon in center of circle */
+    text-align: center;
+    vertical-align: middle;
+    
+
+    font-size: 1.2rem;
+    color: var(--clr-neutral-100);
+    text-decoration: none;
+}
+
+.icon:hover, .icon:active {
+    color: var(--clr-accent-700);
+    border-color: var(--clr-accent-700);
+}
+
+.btn {
+    padding: .8rem 3.8rem;
+    color: var(--clr-primary-400);
+    font-family: var(--ff-accent);
+    border-radius: 2rem;
+    font-size: 1.2rem;
+}
+
+.btn:hover, .btn:active {
+    color: var(--clr-neutral-100);
+    background-color: var(--clr-accent-400);
+}
+
+
+@media (min-width: 60rem) {
+
+    html {
+        font-size: 16px;
+        text-align:start;
+    }
+    
+    body {
+        background-image: none;
+    }
+    
+    .wrap {
+        width: min(95%, 100rem);
+        margin-left: 2rem;
+    }
+        
+    .bg-image {
+        background-image: url(/images/bg-desktop.svg);
+        background-repeat: no-repeat;
+        background-position: top 0 left -1.9rem;
+    
+    }
+    .split {
+        flex-direction: row;
+    }
+    .split > * + * {
+        margin-left: 2em;
+    }
+    .split img {
+        width: 60%;
+    }
+}

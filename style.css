@@ -1,43 +1,83 @@
-/* body * {
+body * {
     border: 1px solid black;
-} */
+}
+
+/* make variable for things that are reused */
+:root {
+    --clr-neutral-100: white;
+    
+    --clr-primary-400: hsl(257, 40%, 49%);
+    --clr-primary-900: hsl(257, 40%, 24%);
+    
+    --clr-accent-400:  hsl(300, 69%, 71%);
+    --clr-accent-700: hsl(300, 70%, 60%);
+
+    --ff-primary: 'Open Sans', sans-serif;
+    --ff-accent: 'Poppins', sans-serif;
+
+}
+
+/* clear margins and box sizing */
+* {
+    box-sizing: border-box;
+}
+
+h1,
+h2,
+body {
+    margin: 0;
+}
 
 body {
-    height: 100vh;
-    width: 100vw;
-    margin: 0;
-    
-    background-color: hsl(257, 40%, 49%);
-    background-image: url(images/bg-mobile.svg);
+    background-image: url(images/bg-desktop.svg);
     background-repeat: no-repeat;
-    background-size: contain;
-    background-origin: center;
-    
-   color: white;
-font-family: 'Open Sans', sans-serif;
+
+   color: var(--clr-neutral-100);
+    font-family: var(--ff-primary);
 }
-.main {
-    display: flex;
-    flex-direction: column;
-    width: 80%;
-    height: 100%;
-    margin: 0 auto;
+
+/* Utility classes - do only 1-2 things */
+
+.bg-primary {
+    background-color: var(--clr-primary-400);
+}
+
+.txt-primary {
+    color: var(--clr-primary-400);
+}
+
+.icon {
+    display: inline-block;
+    border: 1px solid var(--clr-neutral-100);
+    border-radius: 50%;
+    margin: .25em;
+    padding: .25em;
     
+    font-size: 1.25rem;  
+}
+
+/* general classes */
+
+.main {
+    width: min(90%, 80rem); 
 
 }
 .header {
-    padding-top: 30px;
-    padding-bottom: 55px;
+    
 }
 .logo{
-    width: 120px;
+    
 }
 
-.container {
+.split {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     width: 100%;
     text-align: center;
+}
+
+.split > * {
+    flex-basis: 100%;
 }
 
 .mock-ups {
@@ -47,28 +87,20 @@ font-family: 'Open Sans', sans-serif;
     
 }  
 
-.mock-up-img {
-    width: 100%;
+img{
+    max-width: 100%;
+    display: block;
 
 }
 
-.text {
-    width: 100%;
-    
-    margin-top: 50px;
-}
+
 .heading {
-    width: 100%;
-    margin: 0;
-    margin-bottom: 30px;
-
-    font-family: 'Poppins', sans-serif;
+    font-family: var(--ff-accent);
     font-size: 24px;
     
 }
 
 .content {
-    width: 100%;
 
     line-height: 1.5;
     font-size: 14px;
@@ -77,18 +109,18 @@ font-family: 'Open Sans', sans-serif;
 .register {
     padding: 8px 60px;
     border-radius: 50px;
-    border: 1px solid hsl(257, 40%, 24%);
-    box-shadow: 3px 3px 10px 1px hsl(257, 40%, 24%);
+    border: 1px solid var(--clr-primary-900);
+    box-shadow: 3px 3px 10px 1px var(--clr-primary-900);
     margin-top: 5px;
 
     font-size: 12px;
-    font-family: 'Poppins', sans-serif;
-    color:hsl(257, 40%, 49%);
+    font-family: var(--ff-accent);
+    
 }
 
 .register:hover, .register:active {
-    background-color: hsl(300, 69%, 71%);
-    color: white;
+    background-color: var(--clr-accent-400);
+    color: var(--clr-neutral-100);
 }
 
 .icons {
@@ -98,103 +130,13 @@ font-family: 'Open Sans', sans-serif;
     margin-top: 50px;
 }
 
-.fab {
-    display: inline-block;
-    border: 1px solid white;
-    border-radius: 50%;
-    margin: 5px;
-    padding: 5px;
-    
-    font-size: 14px;
-}
 
-.fab:hover, .fab:active {
-    border: 1px solid hsl(300, 70%, 60%);
-    color: hsl(300, 70%, 60%);
+.icon:hover, .icon:active {
+    border: 1px solid var(--clr-accent-700);
+    color: var(--clr-accent-700);
 }
 
 .fa-facebook-f {
     padding: 5px 8px;
 }
 
-@media (min-width: 1024px) {
-body {
-    background-image: url(images/bg-desktop.svg);
-    
-}
-.main {
-    width: 90%;
-    
-}
-.header {
-    padding-top: 50px;
-    padding-bottom: 80px;
-}
-.logo{
-    width: 200px;
-}
-
-.container {
-
-    flex-direction: row;
-}
-/* .mock-up-img {
-    width: 500px;
-
-} */
-.text {
-    width: 40%;
-    margin-left: 50px;
-
-}
-.heading {
-    width: 90%;
-    margin-bottom: 40px;
-
-    font-size: 30px;
-    
-    
-}
-
-.content {
-    font-size: 16px;
-}
-
-.register {
-    padding: 10px 60px;
-
-    font-size: 18px;
-}
-
-.register:hover, .register:active {
-    background-color: hsl(300, 69%, 71%);
-    color: white;
-}
-
-.icons {
-    justify-content: flex-end;
-}
-
-.fab {
-    padding: 10px;
-    margin: 10px;
-
-    font-size: 20px;
-}
-
-
-
-.fa-facebook-f {
-    padding: 10px 13px;
-}
-
-}
- @media (min-width: 1440px) {
-     .heading {
-        font-size: 38px;
-     }
-
-     .content {
-        font-size: 18px;
-    }
- }
