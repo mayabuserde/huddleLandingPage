@@ -1,0 +1,142 @@
+body * {
+    border: 1px solid black;
+}
+
+/* make variable for things that are reused */
+:root {
+    --clr-neutral-100: white;
+    
+    --clr-primary-400: hsl(257, 40%, 49%);
+    --clr-primary-900: hsl(257, 40%, 24%);
+    
+    --clr-accent-400:  hsl(300, 69%, 71%);
+    --clr-accent-700: hsl(300, 70%, 60%);
+
+    --ff-primary: 'Open Sans', sans-serif;
+    --ff-accent: 'Poppins', sans-serif;
+
+}
+
+/* clear margins and box sizing */
+* {
+    box-sizing: border-box;
+}
+
+h1,
+h2,
+body {
+    margin: 0;
+}
+
+body {
+    background-image: url(images/bg-desktop.svg);
+    background-repeat: no-repeat;
+
+   color: var(--clr-neutral-100);
+    font-family: var(--ff-primary);
+}
+
+/* Utility classes - do only 1-2 things */
+
+.bg-primary {
+    background-color: var(--clr-primary-400);
+}
+
+.txt-primary {
+    color: var(--clr-primary-400);
+}
+
+.icon {
+    display: inline-block;
+    border: 1px solid var(--clr-neutral-100);
+    border-radius: 50%;
+    margin: .25em;
+    padding: .25em;
+    
+    font-size: 1.25rem;  
+}
+
+/* general classes */
+
+.main {
+    width: min(90%, 80rem); 
+
+}
+.header {
+    
+}
+.logo{
+    
+}
+
+.split {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    text-align: center;
+}
+
+.split > * {
+    flex-basis: 100%;
+}
+
+.mock-ups {
+    margin: 0;
+    width: 100%;
+    
+    
+}  
+
+img{
+    max-width: 100%;
+    display: block;
+
+}
+
+
+.heading {
+    font-family: var(--ff-accent);
+    font-size: 24px;
+    
+}
+
+.content {
+
+    line-height: 1.5;
+    font-size: 14px;
+}
+
+.register {
+    padding: 8px 60px;
+    border-radius: 50px;
+    border: 1px solid var(--clr-primary-900);
+    box-shadow: 3px 3px 10px 1px var(--clr-primary-900);
+    margin-top: 5px;
+
+    font-size: 12px;
+    font-family: var(--ff-accent);
+    
+}
+
+.register:hover, .register:active {
+    background-color: var(--clr-accent-400);
+    color: var(--clr-neutral-100);
+}
+
+.icons {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+
+.icon:hover, .icon:active {
+    border: 1px solid var(--clr-accent-700);
+    color: var(--clr-accent-700);
+}
+
+.fa-facebook-f {
+    padding: 5px 8px;
+}
+

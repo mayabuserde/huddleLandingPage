@@ -1,6 +1,6 @@
-body * {
+/* body * {
     border: 1px solid black;
-}
+} */
 
 /* make variable for things that are reused */
 :root {
@@ -18,125 +18,230 @@ body * {
 }
 
 /* clear margins and box sizing */
-* {
+html * {
     box-sizing: border-box;
+}
+html {
+    font-size: 10px;
+    
 }
 
 h1,
 h2,
 body {
     margin: 0;
+    
 }
+
+/* global classes */
 
 body {
-    background-image: url(images/bg-desktop.svg);
-    background-repeat: no-repeat;
-
-   color: var(--clr-neutral-100);
-    font-family: var(--ff-primary);
-}
-
-/* Utility classes - do only 1-2 things */
-
-.bg-primary {
     background-color: var(--clr-primary-400);
-}
 
-.txt-primary {
-    color: var(--clr-primary-400);
-}
+    font-family: var(--ff-primary);
+    color: var(--clr-neutral-100);
 
-.icon {
-    display: inline-block;
-    border: 1px solid var(--clr-neutral-100);
-    border-radius: 50%;
-    margin: .25em;
-    padding: .25em;
+    background-image: url(/images/bg-mobile.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
     
-    font-size: 1.25rem;  
 }
+
+h1, h2 {
+    font-family: var(--ff-accent);
+}
+
+header {
+    padding-top: 3em;
+    Padding-bottom: 4em;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+/* utility classes, for 1-2 things that are repeated often */
+
 
 /* general classes */
-
-.main {
-    width: min(90%, 80rem); 
-
-}
-.header {
-    
-}
-.logo{
-    
+.wrap {
+    width: min(90%, 60rem);
+    margin: auto;
 }
 
+
+.logo-container {
+    width: 14rem;
+    padding-left: 1.5rem;
+}
 .split {
     display: flex;
-    flex-direction: row;
-    width: 100%;
-    text-align: center;
+    flex-direction: column;
+    
 }
 
+/* all direct descendants in flexbox will be same size */
 .split > * {
     flex-basis: 100%;
 }
 
-.mock-ups {
-    margin: 0;
-    width: 100%;
+/* all direct descendants with a sibling to the left get a margin */
+
+.split img {
+    
+    padding-left: 1.1rem;
+    padding-right: 1.1rem;
+    padding-top: 1.4rem;
+}
+
+.split h1 {
+    font-size: 2.5rem;
+    line-height: 3.5rem;
+    max-width: 20ch;
+    margin-inline: auto;
+    /* padding:  1.2rem; */
+}
+
+.split p {
+    font-size: 1.7rem;
+    line-height: 2.3rem;
+    max-width: 50ch;
+    margin-inline: auto;
     
     
-}  
-
-img{
-    max-width: 100%;
-    display: block;
-
 }
 
 
-.heading {
-    font-family: var(--ff-accent);
-    font-size: 24px;
+.text {
+    padding: 6rem 1.5rem ;
+    text-align: center;
     
-}
-
-.content {
-
-    line-height: 1.5;
-    font-size: 14px;
-}
-
-.register {
-    padding: 8px 60px;
-    border-radius: 50px;
-    border: 1px solid var(--clr-primary-900);
-    box-shadow: 3px 3px 10px 1px var(--clr-primary-900);
-    margin-top: 5px;
-
-    font-size: 12px;
-    font-family: var(--ff-accent);
-    
-}
-
-.register:hover, .register:active {
-    background-color: var(--clr-accent-400);
-    color: var(--clr-neutral-100);
 }
 
 .icons {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    margin-top: 50px;
+    padding: 1.7rem 2.6rem;
+    text-align: center;
+    
 }
 
+
+.icons > * + * {
+    margin-left: 0.8rem;
+}
+
+.icon {
+    width: 2.5rem;
+    height: 2.5rem;
+
+    border-radius: 50%;
+    border: 1px solid var(--clr-neutral-100);
+    padding: .5rem;
+    /* assign manually to place icon in center of circle */
+    text-align: center;
+    vertical-align: middle;
+    
+
+    font-size: 1.2rem;
+    color: var(--clr-neutral-100);
+    text-decoration: none;
+}
 
 .icon:hover, .icon:active {
-    border: 1px solid var(--clr-accent-700);
     color: var(--clr-accent-700);
+    border-color: var(--clr-accent-700);
 }
 
-.fa-facebook-f {
-    padding: 5px 8px;
+.btn {
+    margin-top: 0.5rem;
+    padding: 1.1rem 7.5rem;
+    color: var(--clr-primary-400);
+    font-family: var(--ff-accent);
+    border-radius: 2rem;
+    font-size: 1.2rem;
+    box-shadow: 0 6px 6px rgba(0,0,0,0.3);
+    border: 1px solid var(--clr-primary-700);
+}
+
+.btn:hover, .btn:active {
+    color: var(--clr-neutral-100);
+    background-color: var(--clr-accent-400);
+}
+
+
+@media (min-width: 60rem) {
+
+    html {
+        font-size: 1rem;
+        
+    }
+    
+    body {
+        background-image: none;
+        text-align: start;
+    }
+    
+    .wrap {
+        width: min(95%, 100rem);
+        margin-left: 2rem;
+    }
+
+    .logo-container {
+        width: 16rem;
+        padding-left: 2rem;
+    }
+        
+    .bg-image {
+        background-image: url(/images/bg-desktop.svg);
+        background-repeat: no-repeat;
+        background-position: top 0 left -1.9rem;
+    
+    }
+    .split {
+        flex-direction: row;
+    }
+    .split > * + * {
+        margin-left: 2em;
+    }
+    .split img {
+        width: 60%;
+    }
+
+    .split img {
+    
+        padding-left: 2.3rem;
+        padding-top: 1.4rem;
+    }
+    .text {
+        padding: 5rem 1.5rem ;
+        text-align: start;
+        
+    }
+    .split h1 {
+        
+        margin-inline: 0;
+        /* padding:  1.2rem; */
+    }
+    
+    .icons {
+    padding: 1.7rem 2.6rem;
+    text-align: right;
+}
+.split p {
+    font-size: 1.1rem;
+    line-height: 2rem;
+    max-width: 50ch;
+    margin-inline: 0;
+}
+
+.btn {
+    padding: .8rem 3.8rem;
+    color: var(--clr-primary-400);
+    font-family: var(--ff-accent);
+    border-radius: 2rem;
+    font-size: 1.2rem;
+    box-shadow: 0 6px 6px rgba(0,0,0,0.3);
+    border: 1px solid var(--clr-primary-700);
+}
 }
 
